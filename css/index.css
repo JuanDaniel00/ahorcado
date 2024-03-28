@@ -372,7 +372,7 @@ body {
     height: 43.2vh;
 }
 
-.delete-button {
+.btnLetra {
     background-color: #000;
     color: #fff;
     font-size: 17px;
@@ -401,7 +401,7 @@ body {
     transform: perspective(70px) rotateX(5deg) rotateY(0deg);
 }
 
-.delete-button::after {
+.btnLetra::after {
     content: "";
     position: absolute;
     top: 0;
@@ -418,7 +418,7 @@ body {
     transition: all 0.1s ease-in-out 0s;
 }
 
-.delete-button::before {
+.btnLetra::before {
     content: "";
     position: absolute;
     top: 0;
@@ -437,7 +437,7 @@ body {
     transition: all 0.1s ease-in-out 0s;
 }
 
-.delete-button:active {
+.btnLetra:active {
     will-change: transform;
     transform: perspective(80px) rotateX(5deg) rotateY(1deg) translateY(3px) scale(0.96);
     height: 64px;
@@ -448,13 +448,13 @@ body {
     transition: all 0.1s ease-in-out 0s;
 }
 
-.delete-button::after:active {
+.btnLetra::after:active {
     background-image: linear-gradient(to bottom,
             rgba(0, 0, 0, 0.5),
             rgba(255, 255, 255, 0.2));
 }
 
-.delete-button:active::before {
+.btnLetra:active::before {
     content: "";
     display: block;
     position: absolute;
@@ -477,7 +477,7 @@ body {
     }
 }
 
-.delete-button:focus {
+.btnLetra:focus {
     outline: none;
 }
 
