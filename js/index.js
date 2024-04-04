@@ -97,73 +97,73 @@ document.querySelectorAll('.btnLetra').forEach(btn => {
         if (dificultad === 'facil') {
             switch (vidas) {
                 case 9:
-                    document.querySelector('.ahorcadoImg').src = "./../img/ahorcado1.jpg";
+                    document.querySelector('.ahorcadoImg').src = "./img/ahorcado1.jpg";
                     break;
                 case 8:
-                    document.querySelector('.ahorcadoImg').src = "./../img/ahorcado2.jpg";
+                    document.querySelector('.ahorcadoImg').src = "./img/ahorcado2.jpg";
                     break;
                 case 7:
-                    document.querySelector('.ahorcadoImg').src = "./../img/ahorcado3.jpg";
+                    document.querySelector('.ahorcadoImg').src = "./img/ahorcado3.jpg";
                     break;
                 case 6:
-                    document.querySelector('.ahorcadoImg').src = "./../img/ahorcado4.jpg";
+                    document.querySelector('.ahorcadoImg').src = "./img/ahorcado4.jpg";
                     break;
                 case 5:
-                    document.querySelector('.ahorcadoImg').src = "./../img/ahorcado5.jpg";
+                    document.querySelector('.ahorcadoImg').src = "./img/ahorcado5.jpg";
                     break;
                 case 4:
-                    document.querySelector('.ahorcadoImg').src = "./../img/ahorcado6.jpg";
+                    document.querySelector('.ahorcadoImg').src = "./img/ahorcado6.jpg";
                     break;
                 case 3:
-                    document.querySelector('.ahorcadoImg').src = "./../img/ahorcado7.jpg";
+                    document.querySelector('.ahorcadoImg').src = "./img/ahorcado7.jpg";
                     break;
                 case 2:
-                    document.querySelector('.ahorcadoImg').src = "./../img/ahorcado8.jpg";
+                    document.querySelector('.ahorcadoImg').src = "./img/ahorcado8.jpg";
                     break;
                 case 1:
-                    document.querySelector('.ahorcadoImg').src = "./../img/ahorcado9.jpg";
+                    document.querySelector('.ahorcadoImg').src = "./img/ahorcado9.jpg";
                     break;
                 case 0:
-                    document.querySelector('.ahorcadoImg').src = "./../img/ahorcadofin.jpg";
+                    document.querySelector('.ahorcadoImg').src = "./img/ahorcadofin.jpg";
                     break;
             };
         } else if (dificultad === 'medio') {
             switch (vidas) {
                 case 6:
-                    document.querySelector('.ahorcadoImg').src = "./../img/ahorcado1.jpg";
+                    document.querySelector('.ahorcadoImg').src = "./img/ahorcado1.jpg";
                     break;
                 case 5:
-                    document.querySelector('.ahorcadoImg').src = "./../img/ahorcado2.jpg";
+                    document.querySelector('.ahorcadoImg').src = "./img/ahorcado2.jpg";
                     break;
                 case 4:
-                    document.querySelector('.ahorcadoImg').src = "./../img/ahorcado3.jpg";
+                    document.querySelector('.ahorcadoImg').src = "./img/ahorcado3.jpg";
                     break;
                 case 3:
-                    document.querySelector('.ahorcadoImg').src = "./../img/ahorcado4.jpg";
+                    document.querySelector('.ahorcadoImg').src = "./img/ahorcado4.jpg";
                     break;
                 case 2:
-                    document.querySelector('.ahorcadoImg').src = "./../img/ahorcado5.jpg";
+                    document.querySelector('.ahorcadoImg').src = "./img/ahorcado5.jpg";
                     break;
                 case 1:
-                    document.querySelector('.ahorcadoImg').src = "./../img/ahorcado8.jpg";
+                    document.querySelector('.ahorcadoImg').src = "./img/ahorcado8.jpg";
                     break;
                 case 0:
-                    document.querySelector('.ahorcadoImg').src = "./../img/ahorcadofin.jpg";
+                    document.querySelector('.ahorcadoImg').src = "./img/ahorcadofin.jpg";
                     break;
             };
         } else if (dificultad === 'dificil') {
             switch (vidas) {
                 case 3:
-                    document.querySelector('.ahorcadoImg').src = "./../img/ahorcado1.jpg";
+                    document.querySelector('.ahorcadoImg').src = "./img/ahorcado1.jpg";
                     break;
                 case 2:
-                    document.querySelector('.ahorcadoImg').src = "./../img/ahorcado6.jpg";
+                    document.querySelector('.ahorcadoImg').src = "./img/ahorcado6.jpg";
                     break;
                 case 1:
-                    document.querySelector('.ahorcadoImg').src = "./../img/ahorcado8.jpg";
+                    document.querySelector('.ahorcadoImg').src = "./img/ahorcado8.jpg";
                     break;
                 case 0:
-                    document.querySelector('.ahorcadoImg').src = "./../img/ahorcadofin.jpg";
+                    document.querySelector('.ahorcadoImg').src = "./img/ahorcadofin.jpg";
                     break;
             };
         }
