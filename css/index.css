@@ -369,7 +369,7 @@ body {
     flex-direction: column;
     background-image: url(./../img/backgroundTeclado.jpg);
     width: 100%;
-    height: 43.2vh;
+    height: 50vh;
 }
 
 .btnLetra {
@@ -492,6 +492,37 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row;
     height: 50vh;
+    gap: 5vw;
+    width: 100%;
+}
+
+.divContPalabraMostrar {
+    font-size: 6em;
+}
+
+.divClose {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    z-index: 1000;
+}
+
+.divContAhorcadoImg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.divContAhorcadoImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }

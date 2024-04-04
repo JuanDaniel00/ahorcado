@@ -1,209 +1,194 @@
-// Hacer el juego ahorcado, donde se pueda seleccionar una de las 3 categorias que hay, y despues una de las 3 dificultades que hay, cada categoria es unica con sus palabras, y cada dificultad tiene sus cosas (vidas, las letras no se bloquean y se pueden volver a seleccionar pero le quitaran una vida al usuario, etc).
-// El juego debe tener un contador de vidas, y un contador de intentos, y un contador de palabras acertadas, y un contador de palabras falladas.
-// El juego debe tener un boton de reiniciar, y un boton de salir.
+// Seleccionar la categoria y añadir la lista de palabras que se usaran mas adelante respecto a la categoria seleccionada
 
-// 1. Seleccionar una de las 3 categorias
-
-// 2. Seleccionar una de las 3 dificultades
-
-let categorias = [
-    {
-        nombre: "Videojuegos",
-        palabras: ["Mario", "Zelda", "Pokemon", "Sonic", "Fortnite", "Minecraft", "League of Legends", "Valorant", "Among Us", "Genshin Impact", "Overwatch", "Apex Legends", "Call of Duty", "FIFA", "NBA", "Madden", "Rocket League", "Halo", "GTA", "Red Dead Redemption", "Assassins Creed", "Cyberpunk", "The Witcher", "God of War", "Uncharted", "The Last of Us", "Spiderman", "Ratchet and Clank", "Crash Bandicoot", "Resident Evil", "Final Fantasy", "Kingdom Hearts", "Metal Gear Solid", "Street Fighter", "Tekken", "Mortal Kombat", "Super Smash"]
-    },
-    {
-        nombre: "Lenguajes de programacion",
-        palabras: ["Python", "Java", "C", "Javascript", "Typescript", "HTML", "CSS", "PHP", "Ruby", "Swift", "Kotlin", "Rust", "Go", "Scala", "Perl", "Lua", "R", "Matlab", "SQL", "NoSQL", "MongoDB", "Firebase", "PostgreSQL", "MySQL", "MariaDB", "SQLite", "Oracle", "SQL Server"]
-    },
-    {
-        nombre: "Componentes Pc",
-        palabras: ["Procesador", "Tarjeta Grafica", "Tarjeta Madre", "Memoria Ram", "Disco Duro", "Fuente de Poder", "Gabinete", "Ventilador", "Disipador", "SSD", "HDD", "GPU", "CPU", "RAM", "USB", "HDMI", "VGA", "DVI", "DisplayPort", "Ethernet", "Wifi", "Bluetooth", "USB-C", "Thunderbolt", "PCI", "PCIe", "SATA", "NVMe"]
-    }
-]
-
-
-// 3.1. Seleccionar una palabra aleatoria de la categoria seleccionada
-
-// 3.2. Mostrar la palabra en pantalla con guiones bajos en lugar de las letras
-
-// 3.3. Mostrar las vidas en pantalla
-
-// 3.4. Mostrar las letras que se han seleccionado
-
-// 3.5. Mostrar las letras que se han fallado
-
-// 3.6. Mostrar las letras que se han acertado
-
-// 3.7. Seleccionar una letra
-
-// 3.8. Verificar si la letra seleccionada esta en la palabra
-
-// 3.9. Si la letra esta en la palabra, mostrar la letra en lugar de los guiones bajos
-
-// 3.10. Si la letra no esta en la palabra, quitar una vida
-
-// 3.11. Verificar si el usuario ha ganado
-
-// 3.12. Verificar si el usuario ha perdido
-
-// 3.13. Mostrar un mensaje si el usuario ha ganado
-
-// 3.14. Mostrar un mensaje si el usuario ha perdido
-
-
-// 4. Reiniciar el juego
-
-
-// xxxxxxxxx-
-
-// Contadores de juego
+let palabras = [];
+let palabra = '';
 let vidas = 0;
-let intentos = 0;
-let palabrasAcertadas = 0;
-let palabrasFalladas = 0;
+let palabraMostrar = '';
+let categoria = '';
+let dificultad = '';
 
-// Seleccionar categoría y dificultad
-let categoriaSeleccionada;
-let dificultadSeleccionada;
-
-// Palabra actual y palabra oculta
-let palabraSecreta;
-let palabraOculta;
-
-// Elementos del DOM
-const palabraElemento = document.querySelector('.divContPalabraMostrar');
-const vidasElemento = document.querySelector('.divContAhorcadoImg');
-const modalDificultad = document.getElementById('modalDificultad');
-const modalJuego = document.getElementById('modalJuego');
-const modalCategorias = document.getElementById('modalCategorias');
-
-// Botones de letras
-const botonesLetras = document.querySelectorAll('.delete-button');
-
-// Reiniciar juego
-function reiniciarJuego() {
-    // Restablecer contadores
-    vidas = 5;
-    intentos = 0;
-    palabrasAcertadas = 0;
-    palabrasFalladas = 0;
-    
-    // Ocultar modal
-    modalJuego.classList.remove('show');
-    modalJuego.style.display = 'none';
-    modalDificultad.classList.remove('show');
-    modalDificultad.style.display = 'none';
-    modalCategorias.classList.remove('show');
-    modalCategorias.style.display = 'none';
-
-    // Limpiar palabra oculta y palabra actual
-    palabraOculta = '';
-    palabraSecreta = '';
-
-    // Limpiar contenedor de palabra
-    palabraElemento.innerHTML = '';
-
-    // Habilitar botones de letras
-    botonesLetras.forEach(button => {
-        button.disabled = false;
+document.querySelectorAll('.package2').forEach(item => {
+    item.addEventListener('click', event => {
+        categoria = item.value;
+        palabras = [];
+        if (categoria == 'games') {
+            palabras = ['minecraft', 'fortnite', 'amongus', 'valorant', 'gta', 'fifa', 'callofduty', 'leagueoflegends', 'overwatch', 'apexlegends', 'roblox', 'terraria', 'pubg', 'rocketleague', 'csgo', 'dota2', 'fallguys', 'zelda', 'pokemon', 'mario', 'sonic', 'halo', 'godofwar', 'uncharted', 'residentevil', 'doom'];
+        } else if (categoria == 'programacion') {
+            palabras = ['javascript', 'python', 'java', 'php', 'ruby', 'swift', 'kotlin', 'typescript', 'sql', 'go', 'r', 'rust', 'dart', 'perl', 'lua', 'scala', 'haskell', 'cobol', 'fortran', 'pascal', 'lisp'];
+        } else if (categoria == 'componentes') {
+            palabras = ['motherboard', 'cpu', 'gpu', 'ram', 'ssd', 'hdd', 'psu', 'case', 'cooler', 'modem', 'ethernet'];
+        }
+        console.log(palabras)
     });
-}
+});
 
-// Función para seleccionar una palabra al azar de la categoría y dificultad seleccionadas
-function seleccionarPalabra() {
-    const palabrasCategoria = categorias.find(cat => cat.nombre === categoriaSeleccionada).palabras;
-    palabraSecreta = palabrasCategoria[Math.floor(Math.random() * palabrasCategoria.length)].toUpperCase();
-    palabraOculta = '_'.repeat(palabraSecreta.length);
-}
+// Seleccionar la dificultad y depedendiendo la dificultad se elige una palabra mas corta o mas larga de la lista de palabras de la categoria seleccionada anteriormentes
 
-// Función para mostrar la palabra oculta
-function mostrarPalabraOculta() {
-    palabraElemento.innerHTML = '';
-    palabraOculta.split('').forEach(letra => {
-        const span = document.createElement('span');
-        span.textContent = letra;
-        palabraElemento.appendChild(span);
+document.querySelectorAll('.btndiff').forEach(item => {
+    item.addEventListener('click', event => {
+        palabra = '';
+        vidas = 0;
+        palabraMostrar = '';
+        dificultad = item.value;
+        if (dificultad == 'facil') {
+            let palabrasCortas = palabras.filter(palabra => palabra.length <= 4);
+            palabra = palabrasCortas[Math.floor(Math.random() * palabrasCortas.length)];
+            vidas = 10;
+            document.querySelector('.titleVidas').innerHTML = `Vidas: ${vidas}`;
+            for (let i = 0; i < palabra.length; i++) {
+                palabraMostrar = Array(palabra.length).fill('_');
+            }
+            document.querySelector('.divContPalabraMostrar').innerHTML = palabraMostrar;
+        } else if (dificultad == 'medio') {
+            let palabrasMedias = palabras.filter(palabra => palabra.length >= 6 && palabra.length <= 8);
+            palabra = palabrasMedias[Math.floor(Math.random() * palabrasMedias.length)];
+            vidas = 7;
+            document.querySelector('.titleVidas').innerHTML = `Vidas: ${vidas}`;
+            for (let i = 0; i < palabra.length; i++) {
+                palabraMostrar = Array(palabra.length).fill('_');
+            }
+            document.querySelector('.divContPalabraMostrar').innerHTML = palabraMostrar;
+        } else if (dificultad == 'dificil') {
+            let palabrasLargas = palabras.filter(palabra => palabra.length >= 10);
+            palabra = palabrasLargas[Math.floor(Math.random() * palabrasLargas.length)];
+            vidas = 4;
+            document.querySelector('.titleVidas').innerHTML = `Vidas: ${vidas}`;
+            for (let i = 0; i < palabra.length; i++) {
+                palabraMostrar = Array(palabra.length).fill('_');
+            }
+            document.querySelector('.divContPalabraMostrar').innerHTML = palabraMostrar;
+        }
+        console.log(palabra)
     });
-}
+});
 
-// Función para comprobar si la letra seleccionada está en la palabra secreta
-function comprobarLetra(letra) {
-    if (palabraSecreta.includes(letra)) {
-        // Actualizar palabra oculta con letras acertadas
-        for (let i = 0; i < palabraSecreta.length; i++) {
-            if (palabraSecreta[i] === letra) {
-                palabraOculta = palabraOculta.substr(0, i) + letra + palabraOculta.substr(i + 1);
+
+document.querySelectorAll('.btnLetra').forEach(btn => {
+    btn.addEventListener('click', event => {
+        let letra = event.target.value;
+        console.log(letra);
+
+        // Comprobar si la letra esta en la palabra
+        if (palabra.includes(letra)) {
+            // Si esta en la palabra, mostrar la letra en la palabra a mostrar
+            for (let i = 0; i < palabra.length; i++) {
+                if (palabra[i] === letra) {
+                    palabraMostrar[i] = letra;
+                }
+            }
+            document.querySelector('.divContPalabraMostrar').innerHTML = palabraMostrar.join(' ');
+        } else {
+            // Si no esta en la palabra, quitar una vida
+            vidas--;
+            document.querySelector('.titleVidas').innerHTML = `Vidas: ${vidas}`;
+        }
+
+        if (dificultad !== 'dificil') {
+            btn.disabled = true;
+            btn.style.backgroundColor = 'red';
+            btn.style.cursor = 'not-allowed';
+        } else if (dificultad === 'dificil') {
+            if (btn.disabled === true) {
+                vidas--;
+                document.querySelector('.titleVidas').innerHTML = `Vidas: ${vidas}`;
             }
         }
 
-        mostrarPalabraOculta();
-        palabrasAcertadas++;
-        document.getElementById('palabrasAcertadas').textContent = palabrasAcertadas;
-    } else {
-        // Restar una vida
-        vidas--;
-        vidasElemento.innerHTML = `<img src="./img/vidas/${vidas}.png" alt="Vidas">`;
-        if (vidas === 0) {
-            // Si se quedó sin vidas, el juego termina
-            palabrasFalladas++;
-            document.getElementById('palabrasFalladas').textContent = palabrasFalladas;
-            document.getElementById('mensaje').textContent = '¡Has perdido! La palabra era: ' + palabraSecreta;
-            document.getElementById('modalJuego').classList.add('show');
-            document.getElementById('modalJuego').style.display = 'block';
-            desactivarBotones();
+        if (dificultad === 'facil') {
+            switch (vidas) {
+                case 9:
+                    document.querySelector('.ahorcadoImg').src = "./../img/ahorcado1.jpg";
+                    break;
+                case 8:
+                    document.querySelector('.ahorcadoImg').src = "./../img/ahorcado2.jpg";
+                    break;
+                case 7:
+                    document.querySelector('.ahorcadoImg').src = "./../img/ahorcado3.jpg";
+                    break;
+                case 6:
+                    document.querySelector('.ahorcadoImg').src = "./../img/ahorcado4.jpg";
+                    break;
+                case 5:
+                    document.querySelector('.ahorcadoImg').src = "./../img/ahorcado5.jpg";
+                    break;
+                case 4:
+                    document.querySelector('.ahorcadoImg').src = "./../img/ahorcado6.jpg";
+                    break;
+                case 3:
+                    document.querySelector('.ahorcadoImg').src = "./../img/ahorcado7.jpg";
+                    break;
+                case 2:
+                    document.querySelector('.ahorcadoImg').src = "./../img/ahorcado8.jpg";
+                    break;
+                case 1:
+                    document.querySelector('.ahorcadoImg').src = "./../img/ahorcado9.jpg";
+                    break;
+                case 0:
+                    document.querySelector('.ahorcadoImg').src = "./../img/ahorcadofin.jpg";
+                    break;
+            };
+        } else if (dificultad === 'medio') {
+            switch (vidas) {
+                case 6:
+                    document.querySelector('.ahorcadoImg').src = "./../img/ahorcado1.jpg";
+                    break;
+                case 5:
+                    document.querySelector('.ahorcadoImg').src = "./../img/ahorcado2.jpg";
+                    break;
+                case 4:
+                    document.querySelector('.ahorcadoImg').src = "./../img/ahorcado3.jpg";
+                    break;
+                case 3:
+                    document.querySelector('.ahorcadoImg').src = "./../img/ahorcado4.jpg";
+                    break;
+                case 2:
+                    document.querySelector('.ahorcadoImg').src = "./../img/ahorcado5.jpg";
+                    break;
+                case 1:
+                    document.querySelector('.ahorcadoImg').src = "./../img/ahorcado8.jpg";
+                    break;
+                case 0:
+                    document.querySelector('.ahorcadoImg').src = "./../img/ahorcadofin.jpg";
+                    break;
+            };
+        } else if (dificultad === 'dificil') {
+            switch (vidas) {
+                case 3:
+                    document.querySelector('.ahorcadoImg').src = "./../img/ahorcado1.jpg";
+                    break;
+                case 2:
+                    document.querySelector('.ahorcadoImg').src = "./../img/ahorcado6.jpg";
+                    break;
+                case 1:
+                    document.querySelector('.ahorcadoImg').src = "./../img/ahorcado8.jpg";
+                    break;
+                case 0:
+                    document.querySelector('.ahorcadoImg').src = "./../img/ahorcadofin.jpg";
+                    break;
+            };
         }
-    }
-    
-    intentos++;
-    document.getElementById('intentos').textContent = intentos;
-}
 
-// Función para desactivar botones de letras
-function desactivarBotones() {
-    botonesLetras.forEach(button => {
-        button.disabled = true;
-    });
-}
-
-// Evento clic para los botones de letras
-botonesLetras.forEach(button => {
-    button.addEventListener('click', function() {
-        comprobarLetra(button.textContent.toUpperCase());
-        button.disabled = true;
-    });
-});
-
-// Evento clic para el botón de reiniciar
-document.getElementById('buttonReiniciar').addEventListener('click', function() {
-    reiniciarJuego();
-});
-
-// Evento clic para el botón de salir
-document.getElementById('buttonSalir').addEventListener('click', function() {
-    reiniciarJuego();
-});
-
-// Evento clic para las categorías
-document.querySelectorAll('.package2').forEach(item => {
-    item.addEventListener('click', event => {
-        categoriaSeleccionada = item.parentElement.parentElement.querySelector('.titleCard').textContent.trim();
-        modalDificultad.classList.add('show');
-        modalDificultad.style.display = 'block';
-    });
-});
-
-// Evento clic para las dificultades
-document.querySelectorAll('.btndiff').forEach(item => {
-    item.addEventListener('click', event => {
-        dificultadSeleccionada = item.textContent.trim();
-        // Extraer la palabra
-        seleccionarPalabra();
-        // Ocultar el modal de dificultad y mostrar el juego
-        modalDificultad.classList.remove('show');
-        modalDificultad.style.display = 'none';
-        modalJuego.classList.add('show');
-        modalJuego.style.display = 'block';
-        // Mostrar la palabra oculta
-        mostrarPalabraOculta();
+        // Comprobar si la palabraMostrar es igual a la palabra
+        if (palabraMostrar.join('') === palabra) {
+            Swal.fire({
+                icon: "success",
+                title: "Nice!!!!",
+                text: "Ganaste :)",
+                showConfirmButton: false
+            });
+            setTimeout(() => {
+                window.location.reload();
+            }, 2000);
+        } else if (vidas === 0) {  // Comprobar si las vidas son 0
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Pediste :(",
+                showConfirmButton: false
+            });
+            setTimeout(() => {
+                window.location.reload();
+            }, 2000);
+        }
     });
 });
