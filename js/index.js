@@ -168,6 +168,19 @@ document.querySelectorAll('.btnLetra').forEach(btn => {
             };
         }
 
+        // Comprobar si el usuario da clic a una tecla ya usada
+
+        if (dificultad !== 'dificil') {
+                btn.disabled = true;
+                btn.style.backgroundColor = 'red';
+                btn.style.cursor = 'not-allowed';
+            } else if (dificultad === 'dificil') {
+                if (btn.disabled === true) {
+                    vidas--;
+                    document.querySelector('.titleVidas').innerHTML = `Vidas: ${vidas}`;
+                }
+            }
+
         // Comprobar si la palabraMostrar es igual a la palabra
         if (palabraMostrar.join('') === palabra) {
             Swal.fire({
