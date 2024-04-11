@@ -1,349 +1,351 @@
 /* generales css */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* principal */
 
 body {
-    background-color: #1a1a1a;
-    overflow-x: hidden;
+  background-color: #1a1a1a;
+  overflow-x: hidden;
 }
 
 .sectionMain {
-    background-image: url(./../img/backgroundMain.svg);
-    background-position: center;
-    background-repeat: no-repeat;
+  background-image: url(./../img/backgroundMain.svg);
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .divContenedorInicio {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
 }
 
 .divContenedorInicio h1 {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #ffffff;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    font-family: "Protest Guerrilla", sans-serif;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  font-family: "Protest Guerrilla", sans-serif;
 }
 
-.divContenedorInicio label {
-    font-family: "Trade Winds", system-ui;
-}
-
-#buttonPlay {
-    margin: 0;
-    height: auto;
-    background: transparent;
-    padding: 0;
-    border: none;
-    cursor: pointer;
+.divContenedorInicio h2 {
+  font-family: "Trade Winds", system-ui;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #ff0000;
+  text-transform: uppercase;
 }
 
 #buttonPlay {
-    --border-right: 6px;
-    --text-stroke-color: rgba(255, 255, 255, 0.6);
-    --animation-color: #ff0000;
-    --fs-size: 2em;
-    letter-spacing: 3px;
-    text-decoration: none;
-    font-size: var(--fs-size);
-    font-family: "Arial";
-    position: relative;
-    text-transform: uppercase;
-    color: transparent;
-    -webkit-text-stroke: 1px var(--text-stroke-color);
+  margin: 0;
+  height: auto;
+  background: transparent;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+#buttonPlay {
+  --border-right: 6px;
+  --text-stroke-color: rgba(255, 255, 255, 0.6);
+  --animation-color: #ff0000;
+  --fs-size: 2em;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-size: var(--fs-size);
+  font-family: "Arial";
+  position: relative;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-stroke-color);
 }
 
 .hover-text {
-    position: absolute;
-    box-sizing: border-box;
-    content: attr(data-text);
-    color: var(--animation-color);
-    width: 0%;
-    inset: 0;
-    border-right: var(--border-right) solid var(--animation-color);
-    overflow: hidden;
-    transition: 0.5s;
-    -webkit-text-stroke: 1px var(--animation-color);
+  position: absolute;
+  box-sizing: border-box;
+  content: attr(data-text);
+  color: var(--animation-color);
+  width: 0%;
+  inset: 0;
+  border-right: var(--border-right) solid var(--animation-color);
+  overflow: hidden;
+  transition: 0.5s;
+  -webkit-text-stroke: 1px var(--animation-color);
 }
 
 #buttonPlay:hover .hover-text {
-    width: 100%;
-    filter: drop-shadow(0 0 23px var(--animation-color))
+  width: 100%;
+  filter: drop-shadow(0 0 23px var(--animation-color));
 }
-
 
 /* ajustes generales modal */
 .modal-content {
-    font-family: "Vibes", system-ui;
-    background-color: #ffffff;
-    color: #020202;
-    border-radius: 20px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 0 20px 1px rgba(255, 255, 255, 0.3);
-    transition: all 0.5s ease;
+  font-family: "Vibes", system-ui;
+  background-color: #ffffff;
+  color: #020202;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 20px 1px rgba(255, 255, 255, 0.3);
+  transition: all 0.5s ease;
 }
 
 .modal-content h1 {
-    font-size: 2.5rem !important;
-    font-weight: bold;
-    text-transform: uppercase !important;
+  font-size: 2.5rem !important;
+  font-weight: bold;
+  text-transform: uppercase !important;
 }
 
 .divCategorias {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    align-items: center;
-    margin-top: 20px;
-    gap: 20px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 20px;
+  gap: 20px;
 }
 
 .button3 {
-    position: relative;
-    width: 2em;
-    height: 2em;
-    border: none;
-    background: #12183090;
-    border-radius: 5px;
-    transition: background 0.5s;
+  position: relative;
+  width: 2em;
+  height: 2em;
+  border: none;
+  background: #12183090;
+  border-radius: 5px;
+  transition: background 0.5s;
 }
 
 .X {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 1.5em;
-    height: 1.5px;
-    background-color: #fff;
-    transform: translateX(-50%) rotate(45deg);
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1.5em;
+  height: 1.5px;
+  background-color: #fff;
+  transform: translateX(-50%) rotate(45deg);
 }
 
 .Y {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 1.5em;
-    height: 1.5px;
-    background-color: #fff;
-    transform: translateX(-50%) rotate(-45deg);
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1.5em;
+  height: 1.5px;
+  background-color: #fff;
+  transform: translateX(-50%) rotate(-45deg);
 }
 
 .close {
-    position: absolute;
-    display: flex;
-    padding: 0.8rem 1.5rem;
-    align-items: center;
-    justify-content: center;
-    transform: translateX(-50%);
-    top: -70%;
-    left: 50%;
-    width: 3em;
-    height: 1.7em;
-    font-size: 12px;
-    background-color: rgb(19, 22, 24);
-    color: rgb(187, 229, 236);
-    border: none;
-    border-radius: 3px;
-    pointer-events: none;
-    opacity: 0;
+  position: absolute;
+  display: flex;
+  padding: 0.8rem 1.5rem;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(-50%);
+  top: -70%;
+  left: 50%;
+  width: 3em;
+  height: 1.7em;
+  font-size: 12px;
+  background-color: rgb(19, 22, 24);
+  color: rgb(187, 229, 236);
+  border: none;
+  border-radius: 3px;
+  pointer-events: none;
+  opacity: 0;
 }
 
 .button3:hover {
-    background-color: rgb(211, 21, 21);
+  background-color: rgb(211, 21, 21);
 }
 
 .button3:active {
-    background-color: rgb(130, 0, 0);
+  background-color: rgb(130, 0, 0);
 }
 
-.button3:hover>.close {
-    animation: close 0.2s forwards 0.25s;
+.button3:hover > .close {
+  animation: close 0.2s forwards 0.25s;
 }
 
 @keyframes close {
-    100% {
-        opacity: 1;
-    }
+  100% {
+    opacity: 1;
+  }
 }
 
 /* modal 1 */
 
 .divImgCard {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
 }
 
 .divImgCard img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-    transition: all .3s;
-    filter: grayscale();
-    transition: all 1s ease;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: all 0.3s;
+  filter: grayscale();
+  transition: all 1s ease;
 }
 
 .animated-gif {
-    display: none;
+  display: none;
 }
 
 .divImgCard:hover .static-gif {
-    display: none;
+  display: none;
 }
 
 .divImgCard:hover .animated-gif {
-    display: block;
+  display: block;
 }
 
 .divImgCard img:hover {
-    filter: grayscale(0);
+  filter: grayscale(0);
 }
 
 .divContPackage {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
 }
 
 .package {
-    width: 200px;
-    height: 254px;
-    background-image: linear-gradient(163deg, #ff0037 0%, #eb225ff5 100%);
-    border-radius: 20px;
-    text-align: center;
-    transition: all 0.25s cubic-bezier(0, 0, 0, 1);
-    cursor: pointer;
+  width: 200px;
+  height: 254px;
+  background-image: linear-gradient(163deg, #ff0037 0%, #eb225ff5 100%);
+  border-radius: 20px;
+  text-align: center;
+  transition: all 0.25s cubic-bezier(0, 0, 0, 1);
+  cursor: pointer;
 }
 
 .package:hover {
-    box-shadow: 0px 0px 30px 1px rgba(204, 0, 255, 0.3);
+  box-shadow: 0px 0px 30px 1px rgba(204, 0, 255, 0.3);
 }
 
 .package2 {
-    width: 200px;
-    height: 254px;
-    background-color: #1d1724;
-    border-radius: 10px;
-    transition: all 0.25s cubic-bezier(0, 0, 0, 1);
-    padding: 5px;
+  width: 200px;
+  height: 254px;
+  background-color: #1d1724;
+  border-radius: 10px;
+  transition: all 0.25s cubic-bezier(0, 0, 0, 1);
+  padding: 5px;
 }
 
 .package2:hover {
-    transform: scale(0.98);
-    border-radius: 18px;
+  transform: scale(0.98);
+  border-radius: 18px;
 }
-
 
 /* modal 2 */
 
 .divContenedorBtn {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px;
 }
 
 .btndiff {
-    padding: 10px 20px;
-    text-transform: uppercase;
-    border-radius: 8px;
-    font-size: 1.35rem;
-    font-weight: 500;
-    color: #ffffff80;
-    text-shadow: none;
-    cursor: pointer;
-    box-shadow: transparent;
-    border: 1px solid #ffffff80;
-    transition: 0.5s ease;
-    user-select: none;
-    background: #1a1a1a;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  border-radius: 8px;
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: #ffffff80;
+  text-shadow: none;
+  cursor: pointer;
+  box-shadow: transparent;
+  border: 1px solid #ffffff80;
+  transition: 0.5s ease;
+  user-select: none;
+  background: #1a1a1a;
 }
 
 .btnFacil:hover {
-    background: #01d340;
-    border: 1px solid #01d340;
-    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
-    box-shadow: 0 0 5px #01d340, 0 0 20px #01d340, 0 0 50px #01d340,
-        0 0 100px #01d340;
+  background: #01d340;
+  border: 1px solid #01d340;
+  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+  box-shadow: 0 0 5px #01d340, 0 0 20px #01d340, 0 0 50px #01d340,
+    0 0 100px #01d340;
 }
 
 .btnMedio:hover {
-    color: #ffffff;
-    background: #008cff;
-    border: 1px solid #008cff;
-    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
-    box-shadow: 0 0 5px #008cff, 0 0 20px #008cff, 0 0 50px #008cff,
-        0 0 100px #008cff;
+  color: #ffffff;
+  background: #008cff;
+  border: 1px solid #008cff;
+  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+  box-shadow: 0 0 5px #008cff, 0 0 20px #008cff, 0 0 50px #008cff,
+    0 0 100px #008cff;
 }
 
 .btnDificil:hover {
-    color: #ffffff;
-    background: #ff0000;
-    border: 1px solid #ff0000;
-    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
-    box-shadow: 0 0 5px #ff0000, 0 0 20px #ff0000, 0 0 50px #ff0000,
-        0 0 100px #ff0000;
+  color: #ffffff;
+  background: #ff0000;
+  border: 1px solid #ff0000;
+  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+  box-shadow: 0 0 5px #ff0000, 0 0 20px #ff0000, 0 0 50px #ff0000,
+    0 0 100px #ff0000;
 }
 
 .btATRAS {
-    display: flex;
-    height: 3em;
-    width: 100px;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(131, 131, 131);
-    border-radius: 3px;
-    letter-spacing: 1px;
-    transition: all 0.2s linear;
-    cursor: pointer;
-    border: none;
+  display: flex;
+  height: 3em;
+  width: 100px;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(131, 131, 131);
+  border-radius: 3px;
+  letter-spacing: 1px;
+  transition: all 0.2s linear;
+  cursor: pointer;
+  border: none;
 }
 
-.btATRAS>svg {
-    margin-right: 5px;
-    margin-left: 5px;
-    font-size: 20px;
-    transition: all 0.4s ease-in;
+.btATRAS > svg {
+  margin-right: 5px;
+  margin-left: 5px;
+  font-size: 20px;
+  transition: all 0.4s ease-in;
 }
 
-.btATRAS:hover>svg {
-    transform: translateX(-5px);
+.btATRAS:hover > svg {
+  transform: translateX(-5px);
 }
 
 .btATRAS:hover {
-    transform: scale(5.4);
-    width: 110px;
-    background-color: #e04c4c;
-    box-shadow: 9px 9px 33px #7a7a7a, -3px -3px 33px #e04c4c;
+  transform: scale(5.4);
+  width: 110px;
+  background-color: #e04c4c;
+  box-shadow: 9px 9px 33px #7a7a7a, -3px -3px 33px #e04c4c;
 }
 
 .btATRAS span {
-    font-size: 1.1em;
-    font-weight: bold;
-    color: #fff;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #fff;
 }
 
 /* css botones modal 2*/
@@ -351,178 +353,213 @@ body {
 /* Modal Header de Juego */
 
 .modal-header-Juego {
-    border-bottom: none !important;
+  border-bottom: none !important;
 }
 
 .modalJuegoStyle {
-    padding: 0 !important;
+  padding: 0 !important;
 }
 
 .modal-body-Juego {
-    padding: 0 !important;
+  padding: 0 !important;
 }
 
 .divTeclado {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-image: url(./../img/backgroundTeclado.jpg);
-    width: 100%;
-    height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url(./../img/backgroundTeclado.jpg);
+  width: 100%;
+  height: 50vh;
 }
 
 .btnLetra {
-    background-color: #000;
-    color: #fff;
-    font-size: 17px;
-    border: 0.5px solid rgba(0, 0, 0, 0.1);
-    padding-bottom: 8px;
-    width: 60px;
-    height: 65px;
-    border-radius: 15px 15px 12px 12px;
-    cursor: pointer;
-    position: relative;
-    will-change: transform;
-    transition: all 0.1s ease-in-out 0s;
-    user-select: none;
-    margin: 5px;
-    /* Add gradient shading to each side */
-    background-image: linear-gradient(to right,
-            rgba(0, 0, 0, 0.8),
-            rgba(0, 0, 0, 0)),
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
-    background-position: bottom right, bottom right;
-    background-size: 100% 100%, 100% 100%;
-    background-repeat: no-repeat;
-    box-shadow: inset -4px -10px 0px rgba(255, 255, 255, 0.4),
-        inset -4px -8px 0px rgba(0, 0, 0, 0.3), 0px 2px 1px rgba(0, 0, 0, 0.3),
-        0px 2px 1px rgba(255, 255, 255, 0.1);
-    transform: perspective(70px) rotateX(5deg) rotateY(0deg);
+  background-color: #000;
+  color: #fff;
+  font-size: 17px;
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 8px;
+  width: 60px;
+  height: 65px;
+  border-radius: 15px 15px 12px 12px;
+  cursor: pointer;
+  position: relative;
+  will-change: transform;
+  transition: all 0.1s ease-in-out 0s;
+  user-select: none;
+  margin: 5px;
+  /* Add gradient shading to each side */
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0)
+    ),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+  background-position: bottom right, bottom right;
+  background-size: 100% 100%, 100% 100%;
+  background-repeat: no-repeat;
+  box-shadow: inset -4px -10px 0px rgba(255, 255, 255, 0.4),
+    inset -4px -8px 0px rgba(0, 0, 0, 0.3), 0px 2px 1px rgba(0, 0, 0, 0.3),
+    0px 2px 1px rgba(255, 255, 255, 0.1);
+  transform: perspective(70px) rotateX(5deg) rotateY(0deg);
 }
 
 .btnLetra::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-image: linear-gradient(to bottom,
-            rgba(255, 255, 255, 0.2),
-            rgba(0, 0, 0, 0.5));
-    z-index: -1;
-    border-radius: 15px;
-    box-shadow: inset 4px 0px 0px rgba(255, 255, 255, 0.1),
-        inset 4px -8px 0px rgba(0, 0, 0, 0.3);
-    transition: all 0.1s ease-in-out 0s;
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.2),
+    rgba(0, 0, 0, 0.5)
+  );
+  z-index: -1;
+  border-radius: 15px;
+  box-shadow: inset 4px 0px 0px rgba(255, 255, 255, 0.1),
+    inset 4px -8px 0px rgba(0, 0, 0, 0.3);
+  transition: all 0.1s ease-in-out 0s;
 }
 
 .btnLetra::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-image: linear-gradient(to right,
-            rgba(0, 0, 0, 0.8),
-            rgba(0, 0, 0, 0)),
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
-    background-position: bottom right, bottom right;
-    background-size: 100% 100%, 100% 100%;
-    background-repeat: no-repeat;
-    z-index: -1;
-    border-radius: 15px;
-    transition: all 0.1s ease-in-out 0s;
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0)
+    ),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+  background-position: bottom right, bottom right;
+  background-size: 100% 100%, 100% 100%;
+  background-repeat: no-repeat;
+  z-index: -1;
+  border-radius: 15px;
+  transition: all 0.1s ease-in-out 0s;
 }
 
 .btnLetra:active {
-    will-change: transform;
-    transform: perspective(80px) rotateX(5deg) rotateY(1deg) translateY(3px) scale(0.96);
-    height: 64px;
-    border: 0.25px solid rgba(0, 0, 0, 0.2);
-    box-shadow: inset -4px -8px 0px rgba(255, 255, 255, 0.2),
-        inset -4px -6px 0px rgba(0, 0, 0, 0.8), 0px 1px 0px rgba(0, 0, 0, 0.9),
-        0px 1px 0px rgba(255, 255, 255, 0.2);
-    transition: all 0.1s ease-in-out 0s;
+  will-change: transform;
+  transform: perspective(80px) rotateX(5deg) rotateY(1deg) translateY(3px)
+    scale(0.96);
+  height: 64px;
+  border: 0.25px solid rgba(0, 0, 0, 0.2);
+  box-shadow: inset -4px -8px 0px rgba(255, 255, 255, 0.2),
+    inset -4px -6px 0px rgba(0, 0, 0, 0.8), 0px 1px 0px rgba(0, 0, 0, 0.9),
+    0px 1px 0px rgba(255, 255, 255, 0.2);
+  transition: all 0.1s ease-in-out 0s;
 }
 
 .btnLetra::after:active {
-    background-image: linear-gradient(to bottom,
-            rgba(0, 0, 0, 0.5),
-            rgba(255, 255, 255, 0.2));
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.5),
+    rgba(255, 255, 255, 0.2)
+  );
 }
 
 .btnLetra:active::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 5%;
-    left: 20%;
-    width: 50%;
-    height: 80%;
-    background-color: rgba(255, 255, 255, 0.1);
-    animation: overlay 0.1s ease-in-out 0s;
-    pointer-events: none;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 5%;
+  left: 20%;
+  width: 50%;
+  height: 80%;
+  background-color: rgba(255, 255, 255, 0.1);
+  animation: overlay 0.1s ease-in-out 0s;
+  pointer-events: none;
 }
 
 @keyframes overlay {
-    from {
-        opacity: 0;
-    }
+  from {
+    opacity: 0;
+  }
 
-    to {
-        opacity: 1;
-    }
+  to {
+    opacity: 1;
+  }
 }
 
 .btnLetra:focus {
-    outline: none;
+  outline: none;
 }
 
 .divContenedorJuego {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .divAhorcado {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    height: 50vh;
-    gap: 5vw;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 50vh;
+  gap: 5vw;
+  width: 100%;
 }
 
 .divContPalabraMostrar {
-    font-size: 6em;
+  font-size: 6em;
 }
 
 .divClose {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 50px;
-    height: 50px;
-    z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  z-index: 1000;
 }
 
 .divContAhorcadoImg {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .divContAhorcadoImg img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ini, pruebas animacion ahorcado */
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.titleVidas {
+  font-family: "Honk", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "MORF" 15, "SHLN" 50;
 }

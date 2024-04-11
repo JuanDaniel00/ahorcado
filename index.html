@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Protest+Guerrilla&family=Trade+Winds&family=Vibes&display=swap"
         rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Honk&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Ahorcado</title>
 </head>
@@ -20,8 +21,8 @@
     <section class="sectionMain">
 
         <div class="divContenedorInicio">
-            <h1 class="tituloPrincipal">Bienvenido a <label class="animate__animated animate__swing">"El
-                    Ahorcado"</label>
+            <h1 class="tituloPrincipal animate__animated animate__swing">Bienvenido a:<h2 class="pulse">"El
+                    Ahorcado"</h2>
             </h1>
             <div data-text="Awesome" data-bs-target="#modalCategorias" data-bs-toggle="modal" id="buttonPlay">
                 <span class="actual-text">&nbsp;jugar&nbsp;</span>
@@ -126,7 +127,7 @@
             <div class="modal-dialog modal-fullscreen">
                 <div class="modal-content modalJuegoStyle">
                     <div class="divClose">
-                        <button class="button3 btn-close btn-reload" type="button" data-bs-dismiss="modal"
+                        <button onclick="location.reload()" class="button3 btn-close btn-reload" type="button" data-bs-dismiss="modal"
                             aria-label="Close">
                             <span class="X"></span>
                             <span class="Y"></span>
